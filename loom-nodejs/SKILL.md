@@ -1,6 +1,6 @@
 ---
 name: loom-nodejs
-description: Develop Node.js backend services for Link Loom using strict architectural standards and defensive coding patterns.
+description: Develop BACKEND Node.js services, APIs, routes, and models for Link Loom. Handles database interactions, business logic, and server-side operations using `loom-sdk`.
 license: Apache 2.0
 author: Blackwood Stone Holdings, Inc.
 compatibility: Requires Node.js v18+, Link Loom SDK

@@ -1,6 +1,6 @@
 ---
 name: loom-react
-description: Develop React frontend components and pages for Link Loom clients (e.g., bsh.sommatic.client.webapp). Enforces strict styling, component structure, and defensive coding.
+description: Develop FRONTEND React components, pages, and UI logic for Link Loom web applications. Handles view rendering, user interactions, and client-side state using `link-loom-react-sdk`.
 license: Apache 2.0
 author: Blackwood Stone Holdings, Inc.
 compatibility: Requires React, Vite, Bootstrap 5
