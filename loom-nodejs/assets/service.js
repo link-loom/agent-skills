@@ -10,7 +10,7 @@ class TemplateService {
 
     /* Custom Properties */
     /* this._myPrivateProperty = 'Some value' */
-    this._tableName = 'MY_TABLE';
+    this._tableName = 'MY_TABLE'; // lowercase
 
     /* Assigments */
     /* this._newPrivateObject = new SomeObject(this._dependencies) */
@@ -24,7 +24,7 @@ class TemplateService {
 
       params.id = this._utilities.generator.id({
         length: 15,
-        prefix: 'id_prefix-',
+        prefix: 'id_prefix-', // human-friendly
       });
 
       const entity = new this._models.TemplateModel(params, this._dependencies);

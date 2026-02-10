@@ -5,8 +5,21 @@ import {
 } from "@services/utils/entityServiceAdapter";
 
 export function TemplateListComponent({ prop1 }) {
+  // Hooks
+  // ...
+
+  // Models
+  // ...
   const [entities, setEntities] = useState([]);
+
+  // UI states
+  // ...
   const [loading, setLoading] = useState(true);
+
+  // Configs
+  // ...
+
+  // Component Functions
 
   // 1. Entry Point
   const initializeComponent = async () => {

@@ -5,10 +5,22 @@ import { useOutletContext } from "react-router-dom";
 import { TemplateEditComponent } from "./edit/TemplateEdit.component";
 import { TemplatePreviewComponent } from "./preview/TemplatePreview.component";
 
-export function TemplateManagerComponent(props) {
-  const { isPopupContext = false } = props;
-  const [isEditMode, setIsEditMode] = useState(false);
+export function TemplateManagerComponent({ isPopupContext = false }) {
+  // Hooks
+  // ...
+
+  // Models
+  // ...
   const [currentEntity, setCurrentEntity] = useState(null);
+
+  // UI states
+  // ...
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  // Configs
+  // ...
+
+  // Component Functions
 
   const handleUpdate = (updatedEntity) => {
     setCurrentEntity(updatedEntity);

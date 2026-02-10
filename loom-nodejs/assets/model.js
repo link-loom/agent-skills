@@ -4,17 +4,17 @@ const { BaseModel, Property } = require("@link-loom/sdk");
  * @swagger
  * components:
  *    schemas:
- *    Template:
- *      type: object
- *      required:
- *        - name
- *      properties:
- *       # 4. Swagger
- *        name:
- *          type: string
- *          description: Template model name.
- *      example:
- *        name: my property name
+ *      Template:
+ *        description: Detailed template model.
+ *        type: object
+ *        required:
+ *          - name
+ *        properties:
+ *          name:
+ *            type: string
+ *            description: Template model name. # 4. Swagger
+ *        example:
+ *          name: my property name
  */
 class TemplateModel extends BaseModel {
   // 1. Class Declaration

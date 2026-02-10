@@ -7,6 +7,23 @@ import { TemplateManagerComponent } from "./manager/TemplateManager.component";
  * ROLE: Orchestration ONLY. No business logic.
  */
 function TemplatePage() {
+  // Hooks
+  const { setPageName } = useOutletContext();
+
+  // Models
+  // ...
+
+  // UI states
+  // ...
+
+  // Configs
+  // ...
+
+  // Component Functions
+  useEffect(() => {
+    setPageName('Page Title');
+  }, []);
+
   return (
     <>
       <TemplateManagerComponent />
