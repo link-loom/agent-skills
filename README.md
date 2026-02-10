@@ -33,32 +33,22 @@ Once installed, the agent will automatically detect and use the appropriate skil
 
 ## Development & Maintenance
 
-These skills rely on **Templates** (`assets/`) that mirror our production codebases (`loom-svc-js` and `bsh.sommatic.client.webapp`).
+This repository acts as the **Source of Truth** for all Link Loom agent capabilities. The `assets/` directory contains the canonical templates used for code generation.
 
-### Syncing Assets (Automated)
+### Updating Standards
 
-**DO NOT manually copy files** from the source repositories. Use the synchronization script to ensure the skills are always up-to-date with production standards.
+To modify architectural rules or coding standards:
 
-1.  Navigate to this directory:
-    ```bash
-    cd link-loom/github/agent-skills
-    ```
-2.  Run the sync script:
-    ```bash
-    node scripts/sync-assets.js
-    ```
-3.  Commit the changes:
-    ```bash
-    git add .
-    git commit -m "chore: sync assets with latest production code"
-    git push
-    ```
+1.  **Edit Manifest**: Update the relevant `SKILL.md` (`loom-nodejs/SKILL.md` or `loom-react/SKILL.md`) with new instructions.
+2.  **Update Templates**: Modify the corresponding files in the `assets/` directory to reflect the new standard.
+    - _Note: Ensure these updates match the production code in `loom-svc-js` and `bsh.sommatic.client.webapp`._
+3.  **Publish**: Commit and push your changes to this repository.
 
-### Adding New Rules
+Consumers can update their local skills to the latest version at any time:
 
-1.  Edit the specific `SKILL.md` file (`loom-nodejs/SKILL.md` or `loom-react/SKILL.md`).
-2.  Add the new rule clearly in the relevant section.
-3.  If the rule requires a code change pattern, update the corresponding template in the source repo first, then run `node scripts/sync-assets.js`.
+```bash
+npx skills update
+```
 
 ## Repository Structure
 
@@ -70,8 +60,6 @@ agent-skills/
 ├── loom-react/            # Frontend Skill
 │   ├── SKILL.md           # Instructions & Rules
 │   └── assets/            # Templates (Page, Component)
-├── scripts/               # Maintenance Scripts
-│   └── sync-assets.js     # Assets Synchronization Tool
 └── README.md              # Documentation
 ```
 
