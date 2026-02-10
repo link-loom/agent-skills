@@ -8,11 +8,14 @@ I, `[INSERT NAME]`, certify that I have reviewed the code submitted in this Pull
 
 I have personally verified the following points:
 
-### 1. General Standards (All Code)
+### 1. General Standards & Best Practices (All Code)
 
 - [ ] **Language**: All code, comments, and static text are in **English**.
 - [ ] **Clean Code**: No unused imports, variables, or functions. No "dead code".
-- [ ] **KISS**: No overengineering. Simple logic is preferred over complex patterns unless necessary.
+- [ ] **KISS & No Overengineering**: Simple logic is preferred. I have not added complexity where it isn't needed.
+- [ ] **Design Patterns**: If I used a pattern (Singleton, Factory, etc.), it is justified by the problem.
+- [ ] **Structured Code**: Code is properly organized (OOP or Functional). **NO** spaghetti code.
+- [ ] **SOLID & DDD**: Entities and components respect Single Responsibility and Domain boundaries.
 - [ ] **Naming**: Semantic variable names used. **NO** single-letter variables (`x`, `e`, `t`).
 - [ ] **Linting**: Code passes all project linting rules (Prettier/ESLint) without errors or warnings.
 
@@ -51,12 +54,15 @@ _Skip if this PR only contains backend code._
 
 - [ ] **DDD Parity**: `src/components/pages/...` mirrors the backend domain structure exactly.
 - [ ] **Entry Point**: Components implement `initializeComponent` for data loading.
-- [ ] **Communication**: Components use `itemOnAction(action, entity)` for event bubbling.
 - [ ] **Manager Pattern**: Used `*Manager` component to orchestrate `List`/`Edit`/`Preview` modes.
+- [ ] **Communication**: Components implement `itemOnAction(action, entity)` for consistent event bubbling.
+- [ ] **Semantics**: Used semantic HTML5 tags (`<article>`, `<section>`, `<header>`) instead of abusing `<div>` and `<span>`.
 
 #### Styling
 
-- [ ] **Bootstrap First**: Layout uses Bootstrap 5 classes (`row`, `col`, `d-flex`, etc). **NO** MUI Grid.
+- [ ] **1. Bootstrap First**: Layout uses Bootstrap 5 classes (`row`, `col`, `d-flex`). This is the primary method.
+- [ ] **2. Styled-Components**: Used **ONLY** if Bootstrap cannot achieve the desired style.
+- [ ] **3. Inline Styles**: Used **ONLY** in extreme cases where neither of the above works.
 - [ ] **Icons**: Used MUI Icons (`@mui/icons-material`), aliased with `Icon` suffix (e.g., `UserIcon`).
 
 #### Data Access
