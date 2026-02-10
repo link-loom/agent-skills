@@ -11,11 +11,22 @@ This repository contains the official **Agent Skills** for the Link Loom ecosyst
 
 ## Installation
 
-To install these skills into your local agent environment (e.g., `~/.gemini/antigravity/skills` or project `.agent/skills`), use the standard `skills` CLI:
+To install these skills, use the standard `skills` CLI. You can choose between project-level (shared with team) or global (personal) installation.
+
+### Project Installation (Recommended)
+
+Installs skills into `.agent/skills` within your current project. This ensures all team members share the same version of the skills.
 
 ```bash
-# Add both skills to your current project/workspace
 npx skills add https://github.com/link-loom/agent-skills
+```
+
+### Global Installation
+
+Installs skills into your user directory (e.g., `~/.gemini/antigravity/skills`), making them available across all your projects.
+
+```bash
+npx skills add https://github.com/link-loom/agent-skills -g
 ```
 
 Once installed, the agent will automatically detect and use the appropriate skill based on your prompt (e.g., asking for a "Backend Service" triggers `loom-nodejs`).
