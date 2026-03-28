@@ -18,10 +18,6 @@ This skill standardizes frontend development for Link Loom applications, enforci
 3.  [Directory Structure](#3-directory-structure)
 4.  [Styling Guidelines](#4-styling-guidelines)
 5.  [Component Guidelines](#5-component-guidelines)
-    - [Pages](#pages)
-    - [Components](#components)
-    - [Services](#services)
-    - [Hooks](#hooks)
 6.  [General Best Practices](#6-general-best-practices)
 7.  [Resources & Documentation](#7-resources--documentation)
 8.  [Examples](#8-examples)
@@ -65,7 +61,7 @@ useEffect(() => {
 
 ## 2. Naming Conventions
 
-**Strictly** adhere to these naming conventions.
+**CRITICAL: STRICT ADHERENCE REQUIRED**
 
 | Type          | Path Pattern                                            | Naming Style              | Example                                             |
 | :------------ | :------------------------------------------------------ | :------------------------ | :-------------------------------------------------- |
@@ -74,16 +70,26 @@ useEffect(() => {
 | **Service**   | `src/services/<Module>/<SubModule>/<name>.service.js`   | `[Domain][Entity]Service` | `IdentityUserManagementService`                     |
 | **Hook**      | `src/hooks/<name>.hook.jsx`                             | `useCamelCase.jsx`        | `src/hooks/useAuth.hook.jsx`                        |
 
+**RULES:**
+
+1. **Directory Match**: A component usually MUST act as its own directory.
+   - **Bad**: `src/components/shared/Sidebar.jsx`
+   - **Good**: `src/components/shared/Sidebar/Sidebar.component.jsx`
+2. **Suffixes**: ALWAYS use the correct suffix: `.page.jsx`, `.component.jsx`, `.service.js`, `.hook.jsx`.
+
 ---
 
 ## 3. Directory Structure
 
-Keep components modular.
+**MANDATORY: Modular Component Structure**
 
 ```text
 src/
 ├── components/          # Reusable UI components
 │   └── <Category>/      # e.g., shared, layout, forms
+│       └── <Component>/ # COMPONENT FOLDER
+│            ├── <Component>.component.jsx
+│            └── subcomponents/
 ├── pages/               # Route-level components
 │   └── <Module>/        # e.g., account, dashboard
 ├── services/            # API interaction logic
@@ -96,7 +102,8 @@ src/
 ## 4. Styling Guidelines
 
 **Primary Directive**: Use **Bootstrap 5** classes.
-**Order of styling**: Use it always:
+
+**Order of styling priority (STRICT):**
 
 1. Bootstrap 5 classes
 2. Styled-components: Only if bootstrap do not have any implementation for the style you need.
@@ -115,6 +122,14 @@ import { AccountCircle as AccountCircleIcon } from "@mui/icons-material";
 ---
 
 ## 5. Component Guidelines
+
+### **CRITICAL: Code Organization**
+
+All components **MUST** follow this internal structure comment-by-comment:
+
+**MANDATORY**: You **MUST** use the template located at `link-loom/github/agent-skills/loom-react/assets/component.jsx`.
+
+**DO NOT** invent your own structure. Copy the template and fill in the blanks.
 
 ### Domain Driven Design (DDD) & Parity
 
